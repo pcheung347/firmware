@@ -1,0 +1,30 @@
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -c -g -fno-common -fmessage-length=0 -Wall -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DNDEBUG -Os -DTARGET_LPC1768 -DTARGET_M3 -DTARGET_CORTEX_M -DTARGET_NXP -DTARGET_LPC176X -DTARGET_MBED_LPC1768 -DTOOLCHAIN_GCC_ARM -DTOOLCHAIN_GCC -D__CORTEX_M3 -DARM_MATH_CM3 -DMBED_BUILD_TIMESTAMP=1428986380.21 -D__MBED__=1  -std=gnu++98 -fno-rtti -I. -I./mbed -I./mbed/TARGET_LPC1768 -I./mbed/TARGET_LPC1768/TOOLCHAIN_GCC_ARM -I./mbed/TARGET_LPC1768/TARGET_NXP -I./mbed/TARGET_LPC1768/TARGET_NXP/TARGET_LPC176X -I./mbed/TARGET_LPC1768/TARGET_NXP/TARGET_LPC176X/TARGET_MBED_LPC1768  -o main.o main.cpp
+main.cpp:8:28: error: invalid suffix "_0040" on integer constant
+ uint32_t *p = (uint32_t *) 0x9FC0_0040
+                            ^
+main.cpp: In function 'void toggle_gpio()':
+main.cpp:8:1: error: 'uint32_t' was not declared in this scope
+ uint32_t *p = (uint32_t *) 0x9FC0_0040
+ ^
+main.cpp:8:11: error: 'p' was not declared in this scope
+ uint32_t *p = (uint32_t *) 0x9FC0_0040
+           ^
+main.cpp:8:26: error: expected primary-expression before ')' token
+ uint32_t *p = (uint32_t *) 0x9FC0_0040
+                          ^
+main.cpp:8:28: error: expected ';' before numeric constant
+ uint32_t *p = (uint32_t *) 0x9FC0_0040
+                            ^
+main.cpp:3:24: warning: unused variable 'mask_value' [-Wunused-variable]
+ register unsigned char mask_value;      /* register to hold the pin mask value */
+                        ^
+main.cpp:4:25: warning: unused variable 'gpio_direction' [-Wunused-variable]
+ volatile unsigned char *gpio_direction; /* a pointer to a GPIO direction register */
+                         ^
+main.cpp:5:25: warning: unused variable 'gpio_set' [-Wunused-variable]
+ volatile unsigned char *gpio_set;       /* a pointer to a GPIO set register */
+                         ^
+main.cpp:6:25: warning: unused variable 'gpio_clr' [-Wunused-variable]
+ volatile unsigned char *gpio_clr;       /* a pointer to a GPIO clear register */
+                         ^
+make: *** [main.o] Error 1

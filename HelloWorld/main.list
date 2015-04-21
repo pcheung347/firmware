@@ -1,0 +1,40 @@
+
+main.o:     file format elf32-littlearm
+
+
+Disassembly of section .text.startup.main:
+
+00000000 <main>:
+   0:	b508      	push	{r3, lr}
+   2:	4c07      	ldr	r4, [pc, #28]	; (20 <main+0x20>)
+   4:	4807      	ldr	r0, [pc, #28]	; (24 <main+0x24>)
+   6:	68e3      	ldr	r3, [r4, #12]
+   8:	6862      	ldr	r2, [r4, #4]
+   a:	601a      	str	r2, [r3, #0]
+   c:	f7ff fffe 	bl	0 <wait>
+  10:	6923      	ldr	r3, [r4, #16]
+  12:	6862      	ldr	r2, [r4, #4]
+  14:	4803      	ldr	r0, [pc, #12]	; (24 <main+0x24>)
+  16:	601a      	str	r2, [r3, #0]
+  18:	f7ff fffe 	bl	0 <wait>
+  1c:	e7f1      	b.n	2 <main+0x2>
+  1e:	bf00      	nop
+  20:	00000000 	.word	0x00000000
+  24:	3e4ccccd 	.word	0x3e4ccccd
+
+Disassembly of section .text.startup._GLOBAL__sub_I_myled:
+
+00000000 <_GLOBAL__sub_I_myled>:
+   0:	b510      	push	{r4, lr}
+   2:	4c06      	ldr	r4, [pc, #24]	; (1c <_GLOBAL__sub_I_myled+0x1c>)
+   4:	2100      	movs	r1, #0
+   6:	4620      	mov	r0, r4
+   8:	2218      	movs	r2, #24
+   a:	f7ff fffe 	bl	0 <memset>
+   e:	4620      	mov	r0, r4
+  10:	4903      	ldr	r1, [pc, #12]	; (20 <_GLOBAL__sub_I_myled+0x20>)
+  12:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
+  16:	f7ff bffe 	b.w	0 <gpio_init_out>
+  1a:	bf00      	nop
+  1c:	00000000 	.word	0x00000000
+  20:	2009c032 	.word	0x2009c032

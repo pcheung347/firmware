@@ -1,0 +1,41 @@
+BEGIN
+--------------------------------------------------------------------
+Q1: Is there any compile error with the following code (if any)?
+
+	unsigned int Arr[16];
+	3[Arr] = 7; 
+ 
+Explain:
+  no error, warning only: array declared but not accessed
+
+
+
+--------------------------------------------------------------------
+Q2: What is the difference between the following 3 statements? 
+
+const int * px; // px pointer is a constant integer
+int const * px; // px pointer is a constant integer
+int * const px; // confusion: px is  qualified as a constant not a pointer
+
+Is there any compile error for the following cases?
+case1: 
+int x = 13; 
+const int * px; 
+px = & x; 
+
+case 2: 
+int x = 13; 
+int const * px; 
+px = & x; 
+
+case 3: 
+int x = 13; 
+int * const px; 
+px = & x; 
+
+Explain:
+
+ no compile error for case1 and case2
+
+ in case3: error on "int * const px"
+           px not initialized

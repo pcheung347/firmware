@@ -1,0 +1,39 @@
+BEGIN
+--------------------------------------------------------------------
+1. What is the _mask value for LED1? 
+   What is the address of FIOSET?
+
+LED1 maps to Port1[18].
+mask value = 1, since its always output.
+
+
+--------------------------------------------------------------------
+2. What is the RS232 Frame?
+
+Start Bit	: 0
+Data bits	: ( 8 bits of 1/0)
+Parity Bit	: 1/0
+Stop Bit	: (1, 1.5, or 2 bits idle time)
+
+--------------------------------------------------------------------
+3. Explain the start and stop conditions of i2c?
+
+Start Condition: SDA switches from High to Low, while SCL stays High.
+
+Stop Condition:  SDA switches from Low to High, while SCL stays High.
+
+--------------------------------------------------------------------
+4. Is the i2c acknowledge SDA LOW or SDA HIGH?
+
+SDA Low.
+
+--------------------------------------------------------------------
+5. Tell me about the DDR3 write leveling Concept in one sentence.  
+   (ref: slides)
+
+A software scheme to measure the skew (due to unblanced loading) between CLK and DQS prior to any Write operations.
+
+
+
+END
+
